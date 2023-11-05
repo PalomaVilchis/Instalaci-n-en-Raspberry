@@ -1,0 +1,17 @@
+sudo apt update && sudo apt upgrade
+sudo apt install -y mosquitto mosquitto-clients
+sudo systemctl enable mosquitto.service
+
+mosquitto -v
+mosquitto -v -d
+
+Para enviar mensajes, es necesario abrir dos terminales, en una se escribira la instrucción:
+mosquitto _sub -h localhost -t /test/topic
+
+Y en la terminal 2
+mosquitto _pub -h localhost -t /test/topic -m "hola localhost”
+
+--
+
+Saludos.
+Paloma V.
